@@ -205,8 +205,6 @@ while True:
                     if current_time_sec <= 10:
                         try:
                             file_path = os.path.join(currently_playing_folder_path, played_songs[-1])
-                            queue_raw.insert(0, PLAYING_SONG)  # Add current song back to the front of the queue_raw
-                            queue.insert(0, PLAYING_SONG)
                             skip = False
                         except:
                             skip = True
@@ -218,6 +216,8 @@ while True:
                             PLAYING_SONG = os.path.basename(file_path)
 
                             played_songs.remove(PLAYING_SONG)
+                            queue_raw.insert(0, PLAYING_SONG)  # Add current song back to the front of the queue_raw
+                            queue.insert(0, PLAYING_SONG)
                                 
                             # Get album cover art for the selected track
                             render_size, cover_art_path = get_cover_art(file_path, SIZE)
