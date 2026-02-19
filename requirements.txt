@@ -8,3 +8,4 @@ Pillow>=10.0.0
 mutagen>=1.46.0
 youtube-search-python>=1.6.6
 sounddevice>=0.4.6
+pynput>=1.8.1

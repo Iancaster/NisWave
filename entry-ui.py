@@ -553,8 +553,3 @@ while True:
     
     # Refresh the display with all rendered elements
     pygame.display.flip()
-
-pygame.quit()
-sys.exit()
-
-
