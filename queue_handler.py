@@ -20,13 +20,16 @@ def shuffler(queue, current_song, first=False):
         print(len(shuffled_queue))
     return shuffled_queue
 
-def generated_unshuffled_queue(current_song, queue_defualt):
-    print("Def", queue_defualt)
-    if queue_defualt:
-        current_index = queue_defualt.index(current_song)
-        queue = queue_defualt.copy()
-        print(current_index)
-        for i in range(0, current_index):
-            queue.remove(queue_defualt[i])
-            queue.append(queue_defualt[i])
-        return queue
+def generated_unshuffled_queue(current_song, queue_default: list):
+    
+    if not queue_default:
+        return []
+    
+    current_index = queue_default.index(current_song)
+    queue = queue_default.copy()
+    
+    for i in range(0, current_index):
+        queue.remove(queue_default[i])
+        queue.append(queue_default[i])
+
+    return queue

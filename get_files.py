@@ -1,6 +1,10 @@
 import os
 
-def get_music_files_and_directories(folder_path, SCREEN_HEIGHT, dir_scroll=0, file_scroll=0):
+def get_music_files_and_directories(
+        folder_path, 
+        SCREEN_HEIGHT, 
+        dir_scroll: float = 0, 
+        file_scroll: float = 0):
     DIRECTORY_ONLY = [
         entry for entry in os.listdir(folder_path) 
         if os.path.isdir(os.path.join(folder_path, entry)) and not entry.startswith('.')
