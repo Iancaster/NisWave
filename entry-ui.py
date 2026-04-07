@@ -119,11 +119,11 @@ class Color(Enum):
     DARK_GREEN = (32, 64, 32)
     LIGHT_GREEN = (64, 128, 64)
 
-skip_button_color = Color.GRAY  
-play_pause_button_color = Color.GRAY  
-back_button_color = Color.GRAY 
-shuffle_button_color = Color.GRAY 
-previous_button_color = Color.GRAY 
+skip_button_color = Color.GRAY.value
+play_pause_button_color = Color.GRAY.value  
+back_button_color = Color.GRAY.value
+shuffle_button_color = Color.GRAY.value
+previous_button_color = Color.GRAY.value
 
 
 old_input = ""
@@ -153,32 +153,32 @@ while True:
         if event.type == pygame.MOUSEMOTION:
 
             if shuffle:
-                shuffle_button_color = Color.LIGHT_GREEN if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-135+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-85+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30 else Color.DARK_GREEN  # Change shuffle button color on hover
+                shuffle_button_color = Color.LIGHT_GREEN.value if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-135+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-85+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30 else Color.DARK_GREEN.value  # Change shuffle button color on hover
             else:
-                shuffle_button_color = Color.LIGHT_GRAY if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-135+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-85+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30 else Color.GRAY  # Change shuffle button color on hover
+                shuffle_button_color = Color.LIGHT_GRAY.value if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-135+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-85+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30 else Color.GRAY.value  # Change shuffle button color on hover
 
             if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-25+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2+25+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30:
-                play_pause_button_color = Color.LIGHT_GRAY  # Lighter gray on hover
+                play_pause_button_color = Color.LIGHT_GRAY.value  # Lighter gray on hover
             else:        
-                play_pause_button_color = Color.GRAY  # Default gray 
+                play_pause_button_color = Color.GRAY.value  # Default gray 
 
             # Change back button color on hover
             if SCREEN_WIDTH/5-40 <= mouse_pos[0] <= SCREEN_WIDTH/5-20 and 5 <= mouse_pos[1] <= 25:
-                back_button_color = Color.LIGHT_GRAY  # Lighter gray on hover
+                back_button_color = Color.LIGHT_GRAY.value  # Lighter gray on hover
             else:
-                back_button_color = Color.GRAY  # Default gray
+                back_button_color = Color.GRAY.value  # Default gray
 
             # Change skip button color on hover
             if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2+30+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2+80+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30:
-                skip_button_color = Color.LIGHT_GRAY  # Lighter gray on hover
+                skip_button_color = Color.LIGHT_GRAY.value  # Lighter gray on hover
             else:
-                skip_button_color = Color.GRAY  # Default gray
+                skip_button_color = Color.GRAY.value  # Default gray
 
             # prevoius button color on hover
             if (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-80+SCREEN_WIDTH/5 <= mouse_pos[0] <= (SCREEN_WIDTH-SCREEN_WIDTH/5)/2-30+SCREEN_WIDTH/5 and SCREEN_HEIGHT-50 <= mouse_pos[1] <= SCREEN_HEIGHT-30:
-                previous_button_color = Color.LIGHT_GRAY  # Lighter gray on hover
+                previous_button_color = Color.LIGHT_GRAY.value  # Lighter gray on hover
             else:
-                previous_button_color = Color.GRAY  # Default gray
+                previous_button_color = Color.GRAY.value  # Default gray
 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
